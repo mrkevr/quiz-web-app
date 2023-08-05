@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class QuizUserData {
 	
-	@Length(min = 6, max = 36, message = "*Name must be 6-36 characters long")
+	@Length(min = 6, max = 36, message = "*Must be 6-36 characters long")
 	private String username;
 	
 	@NotBlank(message = "*Please select category")

@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Press Start 2P", monospace !important;
 }
 
 body {
@@ -32,7 +35,7 @@ h1 {
 .title {
 	font-size: 18px;
 	font-weight: 500;
-	color: #00BFFF;
+	color: white;
 }
 
 .option p {
@@ -45,4 +48,8 @@ footer {
 	height: 80px;
 	text-align: center;
 	line-height: 80px;
+}
+
+.custom-primary{
+	color: #20A0F7;
 }

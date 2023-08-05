@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 	<link rel="stylesheet" th:href="@{/css/quiz.css}">
 	<title>Quiz</title>
 </head>
@@ -25,48 +26,29 @@
 			<input type="hidden" th:field=*{quizUserData.categoryId}  />
 			<input type="hidden" th:field=*{quizUserData.quizId}  />
 			
-			
-			<div class="ques-box bg-dark text-light" th:each="q : ${quizForm.questions}">
-				
-				<!-- <input type="hidden" th:attr="name=${q.questionId}" th:value="${q.questionId}"/> -->
+			<div class="ques-box nes-container is-dark m-auto mb-4" th:each="q : ${quizForm.questions}">
 				
 				<p class="title" th:text="${q.question}"></p>
 				
-				<!-- <div class="option">
-					<input type="radio" th:attr="name=${q.questionId}" th:value="a" required/>
-					<p th:text="${q.option.a}"></p>
-				</div>
-				<div class="option">
-					<input type="radio" th:attr="name=${q.questionId}" th:value="b" required/>
-					<p th:text="${q.option.b}"></p>
-				</div>
-				<div class="option">
-					<input type="radio" th:attr="name=${q.questionId}" th:value="c" required/>
-					<p th:text="${q.option.c}"></p>
-				</div>
-				<div class="option">
-					<input type="radio" th:attr="name=${q.questionId}" th:value="d" required/>
-					<p th:text="${q.option.d}"></p>
-				</div> -->
-				
-				<div class="form-check">
-  					<input class="form-check-input" type="radio" th:attr="name=${q.questionId}" th:value="a" required>
-  					<label class="form-check-label" for="radioA" th:text="${q.option.a}"></label>
-				</div>
-				<div class="form-check">
-  					<input class="form-check-input" type="radio" th:attr="name=${q.questionId}" th:value="b" required>
-  					<label class="form-check-label" for="radioB" th:text="${q.option.b}"></label>
-				</div>
-				<div class="form-check">
-  					<input class="form-check-input" type="radio" th:attr="name=${q.questionId}" th:value="c" required>
-  					<label class="form-check-label" for="radioC" th:text="${q.option.c}"></label>
-				</div>
-				<div class="form-check">
-  					<input class="form-check-input" type="radio" th:attr="name=${q.questionId}" th:value="d" required>
-  					<label class="form-check-label" for="radioD" th:text="${q.option.d}"></label>
-				</div>
-				
-				
+				<label>
+    				<input type="radio" class="nes-radio is-dark" th:attr="name=${q.questionId}" th:value="a" required/>
+    				<span th:text="${q.option.a}" style="color: #20A0F8"></span>
+ 				</label>
+ 				<br>
+ 				<label>
+    				<input type="radio" class="nes-radio is-dark" th:attr="name=${q.questionId}" th:value="b" required/>
+    				<span th:text="${q.option.b}" style="color: #A8E8A0"></span>
+ 				</label>
+ 				<br>
+ 				<label>
+    				<input type="radio" class="nes-radio is-dark" th:attr="name=${q.questionId}" th:value="c" required/>
+    				<span th:text="${q.option.c}" style="color: #F87068"></span>
+ 				</label>
+ 				<br>
+ 				<label>
+    				<input type="radio" class="nes-radio is-dark" th:attr="name=${q.questionId}" th:value="d" required/>
+    				<span th:text="${q.option.d}" style="color: #F8C8A0"></span>
+ 				</label>	
 			</div>
 			
 			<button type="submit" class="btn btn-primary d-block mx-auto mt-4 px-5">Submit Answers</button>
