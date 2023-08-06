@@ -18,7 +18,17 @@
 	
 	<div class="container py-5 px-4">
 	
-		<h1 class="bg-primary text-light">Only Select The Correct Answers</h1>
+		<section class="message- right text-center mb-5 m-auto" style="width: 100%; max-width: 500px;">
+			<div class="nes-balloon from-right">
+				<p><span>Hello, </span><span th:text="${quizForm.quizUserData.username}+'!'" style="color: #20A0F8"></span></p>
+				<p><span>This quiz is about </span><span th:text="${category}" style="color: #F87068"></span><span>.</span></p>
+				<p><span>Please select the correct answers. Good luck!</span></p>
+			</div>
+			<br>
+			<div class="d-flex justify-content-end">
+				<i class="nes-octocat animate float-right"></i>
+			</div>
+		</section>
 		
 		<form action="/quiz" method="POST" th:object=${quizForm}>
 		
@@ -26,9 +36,10 @@
 			<input type="hidden" th:field=*{quizUserData.categoryId}  />
 			<input type="hidden" th:field=*{quizUserData.quizId}  />
 			
-			<div class="ques-box nes-container is-dark m-auto mb-4" th:each="q : ${quizForm.questions}">
+			<div class="ques-box nes-container is-dark with-title m-auto mb-5" th:each="q, iStat : ${quizForm.questions}">
 				
-				<p class="title" th:text="${q.question}"></p>
+				<p class="title nes-container is-dark" th:text="${iStat.count}"></p>
+				<p class="questionTitle" th:text="${q.question}"></p>
 				
 				<label>
     				<input type="radio" class="nes-radio is-dark" th:attr="name=${q.questionId}" th:value="a" required/>
@@ -51,7 +62,7 @@
  				</label>	
 			</div>
 			
-			<button type="submit" class="btn btn-primary d-block mx-auto mt-4 px-5">Submit Answers</button>
+			<button type="submit" class="nes-btn is-primary d-block mx-auto mt-4 px-5">Submit Answers</button>
 		</form>
 	</div>
 	

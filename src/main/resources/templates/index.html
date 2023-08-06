@@ -19,7 +19,7 @@
 	<!-- Main Container Start -->
 	<div class="main-container container py-5 px-4">
 		<div class="image-box">
-			<img th:src="@{/images/box.jpg}" alt="image">
+			<img th:src="@{/images/box.jpg}" alt="image" style="pointer-events: none;">
 		</div>
 		<div class="text-box">
 			<h1 class="mb-5 text-center">
@@ -28,15 +28,15 @@
 				<span class="nes-text is-warning">Quiz </span>
 				<span class="nes-text is-error">App</span>
 			</h1>
-			<form id="form" class="card bg-dark py-5 px-4 nes-container is-dark" action="/quiz" th:object="${quizUserData}" method="GET">
+			<form id="form" class="card bg-dark py-2 px-4 nes-container is-dark" action="/quiz" th:object="${quizUserData}" method="GET">
 				
-				<div class="form-group mb-3">
+				<div class="form-group py-3">
 					<label for="selectCategory" class="text-white">Category</label>
 					<span th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}" class="alert alert-dark bg-dark text-danger border border-dark small p-0"></span>
 					<div class="nes-select is-dark">
 						<select id="selectCategory" th:field="*{categoryId}">
-							<option th:value="null">-- Choose Category --</option>
-							<option th:each="category : ${categories}" th:value="${category.categoryId}" th:text="${category.name}"></option>
+							<option th:value="null" class="text-center">-- Choose Category --</option>
+							<option th:each="category : ${categories}" class="text-center" th:value="${category.categoryId}" th:text="${category.name}"></option>
 						</select>
 					</div>
 				</div>
@@ -44,11 +44,10 @@
 				<div class="form-group">
 					<label for="inputName" class="control-label text-white">Name</label>
 					<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-dark bg-dark text-danger border border-dark small p-0"></span>
-					<input id="inputName" type="text" class="nes-input is-dark py-3" th:field="*{username}" placeholder="6-36 characters">
+					<input id="inputName" type="text" class="nes-input is-dark py-4" th:field="*{username}" placeholder="6-36 characters">
 				</div>
-				
-				<a href="#" onclick="submit()" class="nes-btn is-primary">Start Quiz</a>
 			</form>
+			<a href="#" onclick="submit()" class="nes-btn is-primary mt-3">Start Quiz</a>
 		</div>
 	</div>
 	

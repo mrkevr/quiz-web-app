@@ -21,7 +21,7 @@ h1 {
 
 .ques-box {
 	width: 100%;
-	max-width: 800px;
+	max-width: 1000px;
 	padding: 15px 25px;
 	margin: 50px auto 0 auto;
 	border-radius: 4px;
@@ -32,7 +32,7 @@ h1 {
 	flex-direction: row;
 }
 
-.title {
+.questionTitle {
 	font-size: 18px;
 	font-weight: 500;
 	color: white;
@@ -50,6 +50,18 @@ footer {
 	line-height: 80px;
 }
 
-.custom-primary{
-	color: #20A0F7;
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
 }

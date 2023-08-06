@@ -55,7 +55,7 @@ public class MainController {
 		
 		ModelAndView mav = new ModelAndView("quiz");
 		mav.addObject("quizForm", quizServ.getQuizForm(quizUserData));
-		
+		mav.addObject("category", categoryServ.findById(quizUserData.getCategoryId()).getName());
 		
 		return mav;
 	}

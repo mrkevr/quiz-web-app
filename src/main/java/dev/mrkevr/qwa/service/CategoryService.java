@@ -31,4 +31,16 @@ public class CategoryService {
 		
 		return response.getBody();
 	}
+	
+	public Category findById(String cateogryId) {
+		
+		String uri = BASE_URL+"/"+cateogryId;
+		
+		ResponseEntity<Category> response = restTemplate
+				.exchange(uri, HttpMethod.GET, null,
+				new ParameterizedTypeReference<Category>() {
+				});
+		
+		return response.getBody();
+	}
 }
