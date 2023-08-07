@@ -9,7 +9,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 	<link rel="stylesheet" th:href="@{/css/quiz.css}">
-	<title>Quiz</title>
+	<title>Quiz - Spring Boot Quiz App</title>
+	<link rel="icon" type="image/x-icon" href="/images/box.png">
 </head>
 <body>
 
@@ -20,9 +21,9 @@
 	
 		<section class="message- right text-center mb-5 m-auto" style="width: 100%; max-width: 500px;">
 			<div class="nes-balloon from-right">
-				<p><span>Hello, </span><span th:text="${quizForm.quizUserData.username}+'!'" style="color: #20A0F8"></span></p>
+				<p><span>Hello, </span><span th:text="${quizForm.quizUserData.username}" style="color: #20A0F8"></span><span>!</span></p>
 				<p><span>This quiz is about </span><span th:text="${category}" style="color: #F87068"></span><span>.</span></p>
-				<p><span>Please select the correct answers. Good luck!</span></p>
+				<p><span>Please select the correct answers. Good luck :)</span></p>
 			</div>
 			<br>
 			<div class="d-flex justify-content-end">
@@ -62,7 +63,11 @@
  				</label>	
 			</div>
 			
-			<button type="submit" class="nes-btn is-primary d-block mx-auto mt-4 px-5">Submit Answers</button>
+			<div class="d-flex justify-content-center">
+				<button type="submit" class="nes-btn is-primary d-block mt-4 px-5 me-5">Submit Answers</button>
+				<a href="#top" class="nes-btn is-success mt-4 px-5">Top</a>
+			</div>
+			
 		</form>
 	</div>
 	

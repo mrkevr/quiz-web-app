@@ -65,7 +65,7 @@ public class MainController {
 		
 		// Create instance of UserQuizAnswer to be sent as request body in the service class
 		UserQuizAnswer userQuizAnswer = UserQuizAnswer.builder()
-				.username(map.getFirst("quizUserData.username"))
+				.username(map.getFirst("quizUserData.username").trim())
 				.categoryId(map.getFirst("quizUserData.categoryId"))
 				.quizId(map.getFirst("quizUserData.quizId"))
 				.userAnswers(new ArrayList<UserAnswer>())
@@ -85,6 +85,7 @@ public class MainController {
 		
 		ModelAndView mav = new ModelAndView("result");
 		mav.addObject("result", quizResult);
+		mav.addObject("category", categoryServ.findById(quizResult.getCategoryId()).getName());
 		return mav;
 	}
 	
@@ -94,6 +95,6 @@ public class MainController {
 		
 		
 		
-		return "scoreboard.html";
+		return "ranking.html";
 	}
 }

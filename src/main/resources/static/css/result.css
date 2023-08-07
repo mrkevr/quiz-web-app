@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Press Start 2P", monospace !important;
 }
 
 body {
@@ -38,4 +41,20 @@ footer {
 	height: 80px;
 	text-align: center;
 	line-height: 80px;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
 }

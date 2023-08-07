@@ -61,9 +61,6 @@ public class QuizService {
 		String uri = BASE_URL+"/check";
 		HttpEntity<UserQuizAnswer> request = new HttpEntity<>(userQuizAnswer);
 		ResponseEntity<QuizResult> response = restTemplate.exchange(uri, HttpMethod.POST, request, QuizResult.class);
-		
-		System.out.println(response.getBody());
-		
 		return response.getBody();
 	}
 }

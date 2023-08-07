@@ -9,7 +9,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 	<link th:href="@{/css/index.css}" rel="stylesheet">
-	<title>Home</title>
+	<title>Spring Boot Quiz App</title>
+	<link rel="icon" type="image/x-icon" href="/images/question-box.png">
 </head>
 <body>
 	
@@ -19,7 +20,7 @@
 	<!-- Main Container Start -->
 	<div class="main-container container py-5 px-4">
 		<div class="image-box">
-			<img th:src="@{/images/box.jpg}" alt="image" style="pointer-events: none;">
+			<img th:src="@{/images/question-box.png}" alt="image" style="pointer-events: none;">
 		</div>
 		<div class="text-box">
 			<h1 class="mb-5 text-center">
@@ -35,7 +36,7 @@
 					<span th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}" class="alert alert-dark bg-dark text-danger border border-dark small p-0"></span>
 					<div class="nes-select is-dark">
 						<select id="selectCategory" th:field="*{categoryId}">
-							<option th:value="null" class="text-center">-- Choose Category --</option>
+							<option th:value="null" class="text-center"> - - - - </option>
 							<option th:each="category : ${categories}" class="text-center" th:value="${category.categoryId}" th:text="${category.name}"></option>
 						</select>
 					</div>
@@ -44,10 +45,10 @@
 				<div class="form-group">
 					<label for="inputName" class="control-label text-white">Name</label>
 					<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-dark bg-dark text-danger border border-dark small p-0"></span>
-					<input id="inputName" type="text" class="nes-input is-dark py-4" th:field="*{username}" placeholder="6-36 characters">
+					<input id="inputName" type="text" class="nes-input is-dark py-4 text-center" th:field="*{username}" placeholder="6-36 characters">
 				</div>
 			</form>
-			<a href="#" onclick="submit()" class="nes-btn is-primary mt-3">Start Quiz</a>
+			<a href="#" onclick="submit()" class="nes-btn is-primary mt-3"><i class="nes-jp-logo"></i> Start</a>
 		</div>
 	</div>
 	
