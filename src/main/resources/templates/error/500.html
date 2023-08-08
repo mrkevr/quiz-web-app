@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="index.head">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<link th:href="@{/css/error.css}" rel="stylesheet">
+<title>Error 500 - Spring Boot Quiz App</title>
+<link rel="icon" type="image/x-icon" href="/images/question-box.png">
+</head>
+<body>
+
+	<!-- NavBar -->
+	<div th:replace="~{fragments::navbar}"></div>
+
+	<!-- Main Container Start -->
+	<div class="main-container container py-5 px-4">
+		<section class="message- right text-center mb-5 m-auto"
+			style="width: 100%; max-width: 500px;">
+			<div class="nes-balloon from-right">
+				<p>ERROR 500</p>
+				<p>Oops, there must have been a glitch. We are working on it.</p>
+				<p>Go back to <a href="/">Home</a>.</p>
+			</div>
+			<br>
+			<div class="d-flex justify-content-end">
+				<i class="nes-octocat animate float-right"></i>
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<div th:replace="~{fragments::footer}"></div>
+
+	<!-- Bootstrap JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

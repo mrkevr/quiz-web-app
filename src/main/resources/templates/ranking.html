@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="index.head">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
+	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{/css/score.css}">
-	<title>Score Board</title>
+	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+	<link th:href="@{/css/ranking.css}" rel="stylesheet">
+	<title>Ranking - Spring Boot Quiz App</title>
+	<link rel="icon" type="image/x-icon" href="/images/question-box.png">
 </head>
 <body>
 
-	<!-- Importing NavBar -->
-	<div th:insert="navbar.html :: navbar"></div>
+	<!-- NavBar -->
+	<div th:replace="~{fragments::navbar}"></div>
 	
 	<!-- Main Container Start -->
 	<div class="main-container container py-5 px-4">
-		<h3 class="bg-danger text-center mb-5 p-2">Top Scores Of All Time</h3>
+	
+		<div class="nes-container is-dark d-flex justify-content-center mb-5 p-3">
+			<i class="nes-icon trophy is-medium d-none d-xl-block"></i>
+			<h1 class="nes-text is-warning align-self-center">HIGH SCORES</h1>
+			<i class="nes-icon trophy is-medium d-none d-xl-block"></i>
+			
+			<div class="nes-select is-dark">
+				<select id="selectCategory" th:field="*{categoryId}">
+					<option th:value="null" class="text-center"> - - - - </option>
+					<option th:each="category : ${categories}" class="text-center" th:value="${category.categoryId}" th:text="${category.name}"></option>
+				</select>
+			</div>
+		</div>
 		
-		<table class="bg-dark text-light">
+		<table class="nes-container is-dark">
 			<tr>
-				<th>Name</th>
-				<th>Score</th>
+				<th><h5 class="nes-text is-warning">Name</h5></th>
+				<th><h5 class="nes-text is-warning">Score</h5></th>
 			</tr>
-			<tr th:each="score : ${sList}">
+			
+			<tr>
+				<td>username</td><td>score</td>
+			</tr>
+			<tr>
+				<td>username</td><td>score</td>
+			</tr>
+			<tr>
+				<td>username</td><td>score</td>
+			</tr>
+			<tr>
+				<td>username</td><td>score</td>
+			</tr>
+			
+			
+			
+			<!-- <tr th:each="score : ${sList}">
 				<td th:text="${score.username}"></td>
 				<td th:text="${score.totalCorrect}"></td>
-			</tr>
+			</tr> -->
 		</table>
 	</div>
 	
-	<!-- Importing Footer -->
-	<div th:insert="footer.html :: footer"></div>
+	<!-- Footer -->
+	<div th:replace="~{fragments::footer}"></div>
 	
 	<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>

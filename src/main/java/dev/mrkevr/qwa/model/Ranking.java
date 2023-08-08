@@ -1,5 +1,7 @@
 package dev.mrkevr.qwa.model;
 
+import java.util.Map;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,15 +12,13 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Question {
-
-	String questionId;
-
-	String categoryId;
-
-	String question;
-
-	Option option;
+public class Ranking {
 	
-	String answer;
+	String rankingId;
+	
+	String categoryId;
+	
+	String categoryName;
+	
+	Map<String, Double> usernamePercentage;
 }
