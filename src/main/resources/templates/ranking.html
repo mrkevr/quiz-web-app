@@ -19,45 +19,48 @@
 	
 	<!-- Main Container Start -->
 	<div class="main-container container py-5 px-4">
-	
-		<div class="nes-container is-dark d-flex justify-content-center mb-5 p-3">
-			<i class="nes-icon trophy is-medium d-none d-xl-block"></i>
-			<h1 class="nes-text is-warning align-self-center">HIGH SCORES</h1>
-			<i class="nes-icon trophy is-medium d-none d-xl-block"></i>
-			
+		
+		<!-- Title -->
+		<div class="nes-container is-dark d-flex justify-content-center mb-3 p-3">
+			<i class="nes-icon coin is-medium d-none d-xl-block"></i>
+			<h1 class="nes-text is-warning align-self-center"> HIGH SCORES </h1>
+			<i class="nes-icon coin is-medium d-none d-xl-block"></i>
+		</div>
+		
+		<!-- Select -->
+		<div class="nes-container is-dark d-flex justify-content-center mb-3 p-3">
 			<div class="nes-select is-dark">
-				<select id="selectCategory" th:field="*{categoryId}">
-					<option th:value="null" class="text-center"> - - - - </option>
-					<option th:each="category : ${categories}" class="text-center" th:value="${category.categoryId}" th:text="${category.name}"></option>
+				<select id="selectCategory" th:onchange="'window.location.href = \'' + @{/ranking} + '?categoryId=\' + this.value ' ">
+					<option th:each="category : ${categories}" 
+							th:value="${category.categoryId}" 
+							th:text="${category.name}" 
+							th:selected="${category.categoryId == ranking.categoryId}"
+							class="text-center">
+					</option>
 				</select>
 			</div>
 		</div>
 		
+		<!-- Table -->
 		<table class="nes-container is-dark">
 			<tr>
 				<th><h5 class="nes-text is-warning">Name</h5></th>
 				<th><h5 class="nes-text is-warning">Score</h5></th>
 			</tr>
-			
-			<tr>
-				<td>username</td><td>score</td>
+			<tr th:each="instance, iStat : ${ranking.usernamePercentage}">
+				<td th:switch="${iStat.count}">
+					<span th:case="1" th:text="${instance.key}" style="color: #20A0F8" class="h4"></span>
+					<span th:case="2" th:text="${instance.key}" style="color: #A8E8A0" class="h4" ></span>
+					<span th:case="3" th:text="${instance.key}" style="color: #F87068" class="h4"></span>
+		   			<span th:case="*" th:text="${instance.key}"></span>
+				</td>
+				<td th:switch="${iStat.count}">
+					<span th:case="1" th:text="${instance.value}" style="color: #20A0F8"></span>
+					<span th:case="2" th:text="${instance.value}" style="color: #A8E8A0"></span>
+					<span th:case="3" th:text="${instance.value}" style="color: #F87068"></span>
+		   			<span th:case="*" th:text="${instance.value}"></span>
+				</td>
 			</tr>
-			<tr>
-				<td>username</td><td>score</td>
-			</tr>
-			<tr>
-				<td>username</td><td>score</td>
-			</tr>
-			<tr>
-				<td>username</td><td>score</td>
-			</tr>
-			
-			
-			
-			<!-- <tr th:each="score : ${sList}">
-				<td th:text="${score.username}"></td>
-				<td th:text="${score.totalCorrect}"></td>
-			</tr> -->
 		</table>
 	</div>
 	

@@ -24,8 +24,10 @@ public class CategoryService {
 	
 	public List<Category> getAll() {
 
-		ResponseEntity<List<Category>> response = restTemplate
-				.exchange(BASE_URL, HttpMethod.GET, null,
+		ResponseEntity<List<Category>> response = restTemplate.exchange(
+				BASE_URL, 
+				HttpMethod.GET, 
+				null,
 				new ParameterizedTypeReference<List<Category>>() {
 				});
 		
@@ -36,8 +38,10 @@ public class CategoryService {
 		
 		String uri = BASE_URL+"/"+cateogryId;
 		
-		ResponseEntity<Category> response = restTemplate
-				.exchange(uri, HttpMethod.GET, null,
+		ResponseEntity<Category> response = restTemplate.exchange(
+				uri, 
+				HttpMethod.GET, 
+				null,
 				new ParameterizedTypeReference<Category>() {
 				});
 		

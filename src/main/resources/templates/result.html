@@ -21,14 +21,14 @@
 	<div class="main-container py-5 px-4">
 	
 		<section class="message- right text-center m-auto" style="width: 100%; max-width: 500px;">
-				<div class="nes-balloon from-right">
-					<p><span>Here is the result of your quiz.</span></p>
-				</div>
-				<br>
-				<div class="d-flex justify-content-end">
-					<i class="nes-octocat animate float-right"></i>
-				</div>
-			</section>
+			<div class="nes-balloon from-right">
+				<p><span>Here is the result of your quiz.</span></p>
+			</div>
+			<br>
+			<div class="d-flex justify-content-end">
+				<i class="nes-octocat animate float-right"></i>
+			</div>
+		</section>
 		
 		<div class="nes-container card is-dark mx-auto">
 			<div class="row my-3">
@@ -50,7 +50,7 @@
 		</div>
 		
 		<div class="d-flex justify-content-center mt-4">
-			<a href="/ranking" class="nes-btn is-primary me-3">Ranking</a>
+			<a th:href="@{/ranking(categoryId=${result.categoryId})}" class="nes-btn is-primary me-3">Ranking</a>
 			<a href="/" class="nes-btn is-primary">Home</a>
 		</div>
 	</div>

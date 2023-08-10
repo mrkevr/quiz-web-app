@@ -45,7 +45,7 @@
 				<div class="form-group">
 					<label for="inputName" class="control-label text-white">Name</label>
 					<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-dark bg-dark text-danger border border-dark small p-0"></span>
-					<input id="inputName" type="text" class="nes-input is-dark py-4 text-center" th:field="*{username}" placeholder="6-36 characters">
+					<input id="inputName" type="text" class="nes-input is-dark py-4 text-center" th:field="*{username}" placeholder=" - - - - ">
 				</div>
 			</form>
 			<a href="#" onclick="submit()" class="nes-btn is-primary mt-3"><i class="nes-jp-logo"></i> Start</a>
