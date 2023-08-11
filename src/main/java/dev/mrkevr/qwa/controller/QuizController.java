@@ -1,6 +1,7 @@
 package dev.mrkevr.qwa.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +32,7 @@ public class QuizController {
 	@GetMapping("/quiz")
 	public ModelAndView quizForm(
 			@Valid @ModelAttribute QuizUserData quizUserData,
-			BindingResult result,
-			RedirectAttributes redirectAttrs) {
+			BindingResult result) {
 		
 		if(result.hasErrors()) {
 			ModelAndView mav = new ModelAndView("index");
@@ -48,16 +48,20 @@ public class QuizController {
 	}
 	
 	@PostMapping("/quiz")
-	public ModelAndView processQuizForm(@RequestParam MultiValueMap<String, String> map) {
+	public ModelAndView processQuizForm(
+			@RequestParam MultiValueMap<String, String> map,
+			RedirectAttributes redirectattrs) {
 		
 		UserQuizAnswer userQuizAnswer = quizServ.createUserQuizAnswer(map);
 		QuizResult quizResult = quizServ.getQuizResult(userQuizAnswer);
 		
-		ModelAndView mav = new ModelAndView("result");
-		mav.addObject("result", quizResult);
-		mav.addObject("category", categoryServ.findById(quizResult.getCategoryId()).getName());
-		return mav;
+		redirectattrs.addFlashAttribute("result", quizResult);
+		redirectattrs.addFlashAttribute("category", categoryServ.findById(quizResult.getCategoryId()).getName());
+		return  new ModelAndView("redirect:/result");
 	}
 	
-	
+	@GetMapping("/result")
+	public ModelAndView result() {
+		return new ModelAndView("result");
+	}
 }
