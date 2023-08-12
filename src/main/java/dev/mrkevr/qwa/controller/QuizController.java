@@ -30,7 +30,7 @@ public class QuizController {
 	QuizService quizServ;
 	
 	@GetMapping("/quiz")
-	public ModelAndView quizForm(
+	public ModelAndView quizFormGet(
 			@Valid @ModelAttribute QuizUserData quizUserData,
 			BindingResult result) {
 		
@@ -43,12 +43,11 @@ public class QuizController {
 		ModelAndView mav = new ModelAndView("quiz");
 		mav.addObject("quizForm", quizServ.getQuizForm(quizUserData));
 		mav.addObject("category", categoryServ.findById(quizUserData.getCategoryId()).getName());
-		
 		return mav;
 	}
 	
 	@PostMapping("/quiz")
-	public ModelAndView processQuizForm(
+	public ModelAndView quizFormPost(
 			@RequestParam MultiValueMap<String, String> map,
 			RedirectAttributes redirectattrs) {
 		
