@@ -1,5 +1,6 @@
 # Spring Boot Quiz App
-A multiple-choice question (MCQ) based quiz web application. It consumes my REST API, [quiz-app](https://github.com/mrkevr/quiz-app) to do the backend operations using Spring RestTemplate.
+A multiple-choice question (MCQ) based quiz web application. 
+It consumes my REST API, [quiz-app](https://github.com/mrkevr/quiz-app) to do the backend operations using Spring RestTemplate. Every start of quiz will return a random set of questions based on the category. It has a ranking system where top ten users on each category will appear on the ranking page.
 
 ### Dependencies
 Spring Boot Quiz App is powered by many powerful frameworks and third-party projects:
