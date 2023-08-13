@@ -3,12 +3,14 @@ A multiple-choice question (MCQ) based quiz web application. It consumes my REST
 
 ### Dependencies
 Spring Boot Quiz App is powered by many powerful frameworks and third-party projects:
-| Framework  |  Function |
+| Dependencies | Function |
 | ------------- | ------------- |
 | [Spring Boot](https://spring.io/projects/spring-boot)  | An open-source tool that makes it easier to use Java-based frameworks to create microservices and web apps.  |
-| [Spring Boot Validation](https://docs.spring.io/spring-framework/reference/core/validation/beanvalidation.html)  |  A Spring interface used to validate objects. |
-| [Project Lombok](https://projectlombok.org/) | A Java library tool that is used to minimize/remove the boilerplate code and save the precious time of developers during development by just using some annotations. In addition to it, it also increases the readability of the source code and saves space. |
+| [Spring Validation](https://docs.spring.io/spring-framework/reference/core/validation/beanvalidation.html)  |  A Spring interface used to validate objects. |
 | [Spring Webflux](https://docs.spring.io/spring-framework/reference/web/webflux.html) | A Spring framework built on Project Reactor that supports reactive, asynchronous, and non-blocking programming for developing web applications. |
+| [Project Lombok](https://projectlombok.org/) | A Java library tool that is used to minimize/remove the boilerplate code and save the precious time of developers during development by just using some annotations. In addition to it, it also increases the readability of the source code and saves space. |
+| [Bootstrap](https://getbootstrap.com) | An open source front-end development framework for the creation of websites and web apps. Designed to enable responsive development of mobile-first websites, Bootstrap provides a collection of syntax for template designs. |
+| [NES.css](https://nostalgic-css.github.io/NES.css) | NES-style (8bit-like) CSS Framework. |
 | [Thymeleaf](https://www.thymeleaf.org/) | A Java-based library used to create a web application. |
 
 ### Screenshots
