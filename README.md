@@ -14,13 +14,10 @@ Spring Boot Quiz App is powered by many powerful frameworks and third-party proj
 ### Screenshots
 Home Page
 ![home](https://github.com/mrkevr/quiz-web-app/blob/master/screenshots/home.jpg)
-
 Quiz Page
-
-
+![quiz1](https://github.com/mrkevr/quiz-web-app/blob/master/screenshots/quiz1.jpg)
+![quiz1](https://github.com/mrkevr/quiz-web-app/blob/master/screenshots/quiz2.jpg)
 Result Page
-
-
+![result](https://github.com/mrkevr/quiz-web-app/blob/master/screenshots/result.jpg)
 Ranking Page
-
-
+![ranking](https://github.com/mrkevr/quiz-web-app/blob/master/screenshots/ranking.jpg)
