@@ -45,7 +45,7 @@
 				<div class="col"><span th:if="${result}" th:text="${result.score}" style="color: #F8C8A0"></span></div>
 				<div class="w-100 mb-2"></div>
 				<div class="col text-end">Percentage : </div>
-				<div class="col"><span th:if="${result}"  th:text="${#numbers.formatDecimal(result.percentage, 0, 'COMMA', 2, 'POINT')}+'%'" style="color: #20A0F8"></span></div>
+				<div class="col"><span th:if="${result}" th:text="${#numbers.formatDecimal(result.percentage, 0, 'COMMA', 2, 'POINT')}+'%'" style="color: #20A0F8"></span></div>
 			</div>
 		</div>
 		

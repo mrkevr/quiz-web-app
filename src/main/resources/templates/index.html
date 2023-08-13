@@ -18,11 +18,13 @@
 	<div th:replace="~{fragments::navbar}"></div>
 
 	<!-- Main Container Start -->
-	<div class="main-container container py-5 px-4">
-		<div class="image-box">
+	<div class="main-container container row d-flex justify-content-center m-auto">
+	
+		<div class="image-box col d-none d-lg-flex">
 			<img th:src="@{/images/question-box.png}" alt="image" style="pointer-events: none;">
 		</div>
-		<div class="text-box">
+		
+		<div class="text-box col-12 col-lg-6">
 			<h1 class="mb-5 text-center">
 				<span class="nes-text is-success">Spring </span>
 				<span class="nes-text is-primary">Boot </span>
